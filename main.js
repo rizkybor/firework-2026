@@ -8,7 +8,7 @@ function setup() {
 
   // UNTUK TESTING: Matikan countdown sementara agar langsung tampil pesan
   // Hapus baris ini setelah testing selesai
-//   newYearReached = true;
+  newYearReached = true;
 }
 
 function getCountdownTime() {
@@ -71,6 +71,7 @@ function draw() {
       // --- STYLING QUOTE & HOPE (ESTETIK) ---
       let quote = "2026: Write your own story, make it worth reading.";
       let hope = `"Semoga setiap usahamu di tahun ini tidak hanya menjadi hasil, tapi juga menjadi inspirasi bagi orang-orang di sekitarmu."`;
+      let created = `- rizkybor -`;
       
       let quoteY = window.innerHeight / 2 + 380; // Letakkan di bagian bawah
 
@@ -90,6 +91,11 @@ function draw() {
       textStyle(NORMAL);
       fill(255, 255, 255, 150);
       text(hope, window.innerWidth / 2, quoteY + 20);
+
+      textSize(10);
+      textStyle(ITALIC);
+      fill(255, 255, 255, 230);
+      text(`"${created}"`, window.innerWidth / 2, quoteY + 41);
 
       // Reset style agar tidak mengganggu elemen lain
       textStyle(NORMAL);
