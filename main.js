@@ -49,66 +49,70 @@ function draw() {
       noStroke();
       textAlign(CENTER, CENTER);
       text(getCountdownTime(), window.innerWidth / 2, window.innerHeight / 2);
-   } else {
+    } else {
       // --- TEMPATKAN DI SINI ---
-      
+
       // 1. Pesan Happy New Year Utama
       textSize(90);
       fill(255, 255, 255, 220);
       textAlign(CENTER, CENTER);
-      text("Happy New Year 2026!", window.innerWidth / 2, window.innerHeight / 2 - 150);
+      text(
+        "Happy New Year 2026!",
+        window.innerWidth / 2,
+        window.innerHeight / 2 - 150
+      );
 
       // 2. Styling Resolusi Style Pills
-      textSize(12); 
+      textSize(12);
       textAlign(CENTER, CENTER);
       rectMode(CENTER);
       noStroke();
 
-      let resolutions = [
-       
-      ];
+      let resolutions = [];
 
       // --- STYLING QUOTE & HOPE (ESTETIK) ---
       let quote = "2026: Write your own story, make it worth reading.";
       let hope = `"Semoga setiap usahamu di tahun ini tidak hanya menjadi hasil, tapi juga menjadi inspirasi bagi orang-orang di sekitarmu."`;
       let created = `- rizkybor -`;
-      
-      let quoteY = window.innerHeight / 2 + 380; // Letakkan di bagian bawah
 
-      // 1. Kotak Transparan (Glass Effect)
-      fill(255, 255, 255, 15); 
+      let quoteY = window.innerHeight / 2 + 240; // posisi lebih naik
+
+      fill(255, 255, 255, 15);
       noStroke();
       rect(window.innerWidth / 2, quoteY, 900, 100, 15);
 
-      // 2. Styling Quote Utama
-      textSize(20);
+      textSize(16);
       textStyle(ITALIC);
       fill(255, 255, 255, 230);
-      text(`"${quote}"`, window.innerWidth / 2, quoteY - 15);
+      text(`"${quote}"`, window.innerWidth / 2, quoteY - 22);
 
-      // 3. Styling Harapan/Wish
-      textSize(15);
+      textSize(14);
       textStyle(NORMAL);
       fill(255, 255, 255, 150);
-      text(hope, window.innerWidth / 2, quoteY + 20);
+      text(hope, window.innerWidth / 2, quoteY + 10);
 
       textSize(10);
       textStyle(ITALIC);
       fill(255, 255, 255, 230);
-      text(`"${created}"`, window.innerWidth / 2, quoteY + 41);
+      text(`"${created}"`, window.innerWidth / 2, quoteY + 31);
 
       // Reset style agar tidak mengganggu elemen lain
       textStyle(NORMAL);
 
       for (let i = 0; i < resolutions.length; i++) {
         let x = window.innerWidth / 2;
-        let y = window.innerHeight / 2 + 30 + (i * 65); // Jarak antar pill
+        let y = window.innerHeight / 2 + 30 + i * 65; // Jarak antar pill
         let padding = 40;
         let w = textWidth(resolutions[i].txt) + padding;
         let h = 50;
 
         // Background Pill
-        fill(resolutions[i].col.levels[0], resolutions[i].col.levels[1], resolutions[i].col.levels[2], 50);
+        fill(
+          resolutions[i].col.levels[0],
+          resolutions[i].col.levels[1],
+          resolutions[i].col.levels[2],
+          50
+        );
         rect(x, y, w, h, 25);
 
         // Border Pill
