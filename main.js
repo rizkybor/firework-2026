@@ -8,7 +8,7 @@ function setup() {
 
   // UNTUK TESTING: Matikan countdown sementara agar langsung tampil pesan
   // Hapus baris ini setelah testing selesai
-  newYearReached = true;
+//   newYearReached = true;
 }
 
 function getCountdownTime() {
